@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// node_modules
+import { ThemeProvider } from "styled-components";
+// components
+import { Button, Select, TextField, Typography } from "./components/atoms";
+// theme
+import theme from "./theme";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <br />
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "12px",
+            width: "100%",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Button variant="contained">test</Button>
+          <TextField />
+          <Select options={[]} />
+          <Typography variant="heading">Heading</Typography>
+          <Typography variant="body">Body</Typography>
+          <Typography variant="caption">Caption</Typography>
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }
 
