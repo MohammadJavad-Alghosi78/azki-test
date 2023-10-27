@@ -27,6 +27,8 @@ const GlobalStyle = createGlobalStyle`
         display: block;
     }
     body {
+        font-family: vazir;
+        direction: rtl;
         line-height: 1;
     }
     ol, ul {
