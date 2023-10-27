@@ -4,10 +4,14 @@ import { ThemeProvider } from "styled-components";
 import { Button, Select, TextField, Typography } from "./components/atoms";
 // theme
 import theme from "./theme";
+import { useState } from "react";
+import GlobalStyle from "./styles";
 
 function App() {
+  const [value, setValue] = useState("");
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <div className="App">
         <br />
 
@@ -25,7 +29,12 @@ function App() {
             contained
           </Button>
           <Button variant="outlined">outlined</Button>
-          <TextField />
+          <TextField
+            type="number"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="phone number ..."
+          />
           <Select options={[]} />
           <Typography variant="heading">Heading</Typography>
           <Typography variant="body">Body</Typography>
