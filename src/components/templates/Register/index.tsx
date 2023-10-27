@@ -9,11 +9,10 @@ import { validationRules } from "./constants";
 const Register: FC<IRegisterPropsType> = (props) => {
   const {
     register,
-    formState: { errors, isValid },
+    formState: { errors },
     watch,
     setValue,
   } = useFormContext();
-  console.log(isValid, errors);
   return (
     <StyledWrapper>
       <Typography variant="heading" className="register__title">

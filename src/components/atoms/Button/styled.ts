@@ -14,7 +14,7 @@ const handleVariantStyles = (theme: DefaultTheme, variant: ButtonVariants) => {
   return {
     color: theme.colors.green,
     backgroundColor: theme.colors.white,
-    border: `1px solid ${theme.colors.gray}`,
+    border: `1px solid ${theme.colors.green}`,
   };
 };
 

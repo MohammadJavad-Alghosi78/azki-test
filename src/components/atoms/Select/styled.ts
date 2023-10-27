@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const StyledWrapper = styled.div(() => ({
   position: "relative",
   minWidth: "136px",
-  width: "auto",
+  width: "100%",
 }));
 
 export const StyledArrow = styled.img(() => ({

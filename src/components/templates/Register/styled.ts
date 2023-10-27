@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledWrapper = styled.div(({ theme }) => ({
+export const StyledWrapper = styled.div(() => ({
   display: "flex",
   flexDirection: "column",
   gap: "16px",
