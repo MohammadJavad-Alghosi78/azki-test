@@ -10,4 +10,5 @@ export interface ISelectProps extends HTMLAttributes<HTMLSelectElement> {
   disabled?: boolean;
   hasError?: boolean;
   onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
+  label: string;
 }

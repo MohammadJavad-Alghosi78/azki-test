@@ -35,7 +35,14 @@ function App() {
             onChange={(e) => setValue(e.target.value)}
             placeholder="phone number ..."
           />
-          <Select options={[]} />
+          <Select
+            options={[
+              { value: "benz", title: "benz" },
+              { value: "bmw", title: "bmw" },
+              { value: "ford", title: "ford" },
+            ]}
+            label="m"
+          />
           <Typography variant="heading">Heading</Typography>
           <Typography variant="body">Body</Typography>
           <Typography variant="caption">Caption</Typography>

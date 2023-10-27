@@ -20,7 +20,7 @@ const handleVariantStyles = (theme: DefaultTheme, variant: ButtonVariants) => {
 
 export const StyledButton = styled.button<IButtonProps>(
   ({ theme, disabled, variant }) => ({
-    borderRadius: "15px",
+    borderRadius: "10px",
     cursor: disabled ? "not-allowed" : "pointer",
     padding: "0.5rem",
     fontSize: "12px",
