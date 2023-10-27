@@ -31,6 +31,15 @@ const persianWords: IWords = {
     discountPercentageDriverAccidents: "درصد تخفیف حوادث راننده",
     callForPrice: "استعلام قیمت",
   },
+  validation: {
+    required: "وارد کردن این فیلد اجباری است.",
+    persianWordsPattern: "لطفا فقط از حروف فارسی استفاده کنید.",
+    phoneNumberPattern: "لطفا شماره تلفن خود را به درستی وارد کنید.",
+    passwordPattern:
+      "باید حداقل از یک حرف انگلیسی کوچک، یک حرف انگیسی بزرگ و یک عدد استفاده کنید.",
+    minLength: (n: number) => `باید حداقل ${n} کاراکتر وارد کنید.`,
+    maxLength: (n: number) => `حداکثر میتوانید ${n} کاراکتر وارد کنید.`,
+  },
 };
 
 export default persianWords;

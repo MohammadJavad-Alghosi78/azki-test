@@ -8,4 +8,5 @@ export interface ITextFieldProps extends HTMLAttributes<HTMLInputElement> {
   type?: "text" | "number" | "password";
   name?: string;
   className?: string;
+  errorMessage?: string;
 }

@@ -27,4 +27,12 @@ export interface IWords {
     discountPercentageDriverAccidents: string;
     callForPrice: string;
   };
+  validation: {
+    required: string;
+    persianWordsPattern: string;
+    phoneNumberPattern: string;
+    passwordPattern: string;
+    minLength: (n: number) => string;
+    maxLength: (n: number) => string;
+  };
 }
