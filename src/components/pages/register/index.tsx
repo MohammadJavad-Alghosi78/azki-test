@@ -1,11 +1,13 @@
+import { persianWords } from "../../../translation";
 import { Layout } from "../../organisms";
+import { Register } from "../../templates";
 
-const Register = () => {
+const RegisterPage = () => {
   return (
-    <Layout details="ثبت نام">
-      <h1>register 12 page</h1>
+    <Layout details={persianWords.RegistrationProcess.register}>
+      <Register />
     </Layout>
   );
 };
 
-export default Register;
+export default RegisterPage;

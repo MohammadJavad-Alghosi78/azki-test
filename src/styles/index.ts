@@ -31,6 +31,9 @@ const GlobalStyle = createGlobalStyle`
         direction: rtl;
         line-height: 1;
     }
+    * {
+        font-family: vazir;
+    }
     ol, ul {
         list-style: none;
     }

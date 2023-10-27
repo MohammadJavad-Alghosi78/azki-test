@@ -6,7 +6,7 @@ import { ITextFieldProps } from "./types";
 import { StyledTextField } from "./styled";
 
 const TextField: FC<ITextFieldProps> = (props) => {
-  return <StyledTextField {...props} />;
+  return <StyledTextField {...props} autoComplete="off" />;
 };
 
 export default TextField;

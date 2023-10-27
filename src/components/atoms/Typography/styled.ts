@@ -13,12 +13,12 @@ const handleVariantStyles = (variant: TypographyVariants) => {
     case "body":
       return {
         fontSize: "14px",
-        fontWeight: "600",
+        fontWeight: "500",
       };
     case "caption":
       return {
         fontSize: "12px",
-        fontWeight: "500",
+        fontWeight: "400",
       };
   }
 };

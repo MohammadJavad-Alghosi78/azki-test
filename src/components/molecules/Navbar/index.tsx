@@ -13,7 +13,7 @@ const Navbar: FC<INavbar> = (props) => {
     <StyledNavbar>
       <img src="/icons/logo.svg" alt="" />
       <Typography variant="heading">{pageTitle ?? ""}</Typography>
-      <div>{details}</div>
+      <Typography variant="caption">{details}</Typography>
     </StyledNavbar>
   );
 };
