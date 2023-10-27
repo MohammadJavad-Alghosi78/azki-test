@@ -21,7 +21,10 @@ function App() {
             width: "100%",
           }}
         >
-          <Button variant="contained">test</Button>
+          <Button variant="contained" onClick={() => console.log("test")}>
+            contained
+          </Button>
+          <Button variant="outlined">outlined</Button>
           <TextField />
           <Select options={[]} />
           <Typography variant="heading">Heading</Typography>
