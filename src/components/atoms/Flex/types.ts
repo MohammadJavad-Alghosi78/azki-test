@@ -5,6 +5,7 @@ export interface IFlex {
   children: ReactNode;
 
   width?: CSSProperties["width"];
+  padding?: CSSProperties["padding"];
   flexdirection?: CSSProperties["flexDirection"];
   justifycontent?: CSSProperties["justifyContent"];
   alignitems?: CSSProperties["alignItems"];

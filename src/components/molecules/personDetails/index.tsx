@@ -2,8 +2,11 @@
 import { FC } from "react";
 // components
 import { Flex, Typography } from "../../atoms";
-// types
-import { IPersonDetails } from "./types";
+
+export interface IPersonDetails {
+  firstName: string;
+  lastName: string;
+}
 
 const PersonDetails: FC<IPersonDetails> = (props) => {
   const { firstName, lastName } = props;

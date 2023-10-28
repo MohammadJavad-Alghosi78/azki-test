@@ -8,6 +8,8 @@ import { ESteps } from "../../templates/BuyInsurance/constants";
 import { IBuyInsuranceFooterPropsType } from "./types";
 // translations
 import { persianWords } from "../../../translation";
+// styles
+import { BackIcon, ForwardIcon } from "./styled";
 
 const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
   const { currentStep, onCurrentStepChange, onSubmit, isNextButtonDisabled } =
@@ -52,14 +54,25 @@ const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
       width="50%"
     >
       <Button variant="outlined" onClick={() => handleStep("prev")}>
-        {previousStep}
+        <Flex smalignitems="center" smflexdirection="row">
+          <BackIcon src="/icons/arrow.svg" alt="" width={12} height={12} />
+          {previousStep}
+        </Flex>
       </Button>
       <Button
         variant="outlined"
         onClick={() => handleStep("next")}
         disabled={isNextButtonDisabled}
       >
-        {nextStep}
+        <Flex
+          smalignitems="center"
+          smjustifycontent="center"
+          smwidth="100%"
+          smflexdirection="row"
+        >
+          {nextStep}
+          <ForwardIcon src="/icons/arrow.svg" alt="" width={12} height={12} />
+        </Flex>
       </Button>
     </Flex>
   );

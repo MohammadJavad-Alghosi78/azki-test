@@ -2,6 +2,7 @@
 import { FC, ReactNode } from "react";
 // components
 import { Flex, Typography } from "../../atoms";
+// hooks
 import { useWidth } from "../../../hooks";
 
 interface INavbar {
@@ -18,6 +19,7 @@ const Navbar: FC<INavbar> = (props) => {
       smflexdirection="row"
       smjustifycontent="space-between"
       alignitems="center"
+      padding="36px 0 0"
     >
       <img src="/icons/logo.svg" alt="" width={32} height={32} />
       {width > 760 && (

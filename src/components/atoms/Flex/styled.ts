@@ -15,7 +15,9 @@ export const StyledWrapper = styled.div<IFlex>(
     smalignitems,
     smgap,
     smwidth,
+    padding,
   }) => ({
+    padding,
     width: smwidth ?? "100%",
     display: "flex",
     flexDirection: smflexdirection ?? "column",

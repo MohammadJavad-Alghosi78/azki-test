@@ -2,7 +2,7 @@
 import { ChangeEvent, HTMLAttributes } from "react";
 
 export interface ISelectOption {
-  value: string | number;
+  value: string;
   title: string;
 }
 
