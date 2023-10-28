@@ -12,8 +12,11 @@ interface ICarStep {
 
 const CarStep: FC<ICarStep> = ({ vehicles }) => {
   const { chooseCarModelAndType, carModel, carType } = persianWords.inquiry;
-  const { carModel: selectedCarModel, onCarModelChange } =
-    useContext(CallToPriceContext);
+  const {
+    carModel: selectedCarModel,
+    onCarModelChange,
+    onCarTypeChange,
+  } = useContext(CallToPriceContext);
 
   const [carTypes, setCarTypes] = useState<Array<ISelectOption>>([]);
 
@@ -32,6 +35,11 @@ const CarStep: FC<ICarStep> = ({ vehicles }) => {
     }));
     setCarTypes(carTypeOptions);
   };
+
+  const handleCarTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    onCarTypeChange(e.target.value);
+  };
+
   return (
     <>
       <Typography variant="body" color={theme.colors.lightGray}>
@@ -47,6 +55,7 @@ const CarStep: FC<ICarStep> = ({ vehicles }) => {
           options={carTypes ?? []}
           disabled={!selectedCarModel}
           label={carType}
+          onChange={handleCarTypeChange}
         />
       </Flex>
     </>

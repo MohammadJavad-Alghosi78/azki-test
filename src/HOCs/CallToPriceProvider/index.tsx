@@ -31,8 +31,7 @@ const CallToPriceProvider: FC<ICallToPriceProvider> = ({ children }) => {
     carModel,
     onCarModelChange: (m: string) => setCarModel(m),
     previousInsuranceCompany,
-    onPreviousInsuranceCompany: () => (c: string) =>
-      setPreviousInsuranceCompany(c),
+    onPreviousInsuranceCompany: (c: string) => setPreviousInsuranceCompany(c),
     discountPercentageThirdInsurance,
     onDiscountPercentageThirdInsurance: (t: string) =>
       setDiscountPercentageThirdInsurance(t),

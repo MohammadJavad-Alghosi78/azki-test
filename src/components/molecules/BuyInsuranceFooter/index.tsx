@@ -6,7 +6,7 @@ import { ESteps } from "../../templates/BuyInsurance/constants";
 import { IBuyInsuranceFooterPropsType } from "./types";
 
 const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
-  const { currentStep, onCurrentStepChange } = props;
+  const { currentStep, onCurrentStepChange, onSubmit } = props;
 
   const {
     shared: { previousStep, nextStep },
@@ -28,7 +28,9 @@ const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
   if (currentStep === ESteps.DISCOUNTS) {
     return (
       <Flex justifyContent="end">
-        <Button variant="contained">{callForPrice}</Button>
+        <Button variant="contained" onClick={onSubmit}>
+          {callForPrice}
+        </Button>
       </Flex>
     );
   }

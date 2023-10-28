@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from "react";
+import { FC, MouseEventHandler, useContext, useState } from "react";
 import { StyledWrapper } from "./styled";
 import { Typography } from "../../atoms";
 import { CallToPriceContext } from "../../../context";
@@ -11,13 +11,13 @@ import CompanyStepContainer from "../../organisms/CompanyStep/CompanyStepContain
 import DiscountStepContainer from "../../organisms/DiscountStep/DiscountStepContainer";
 
 interface IBuyInsrance {
-  onSubmit: Function;
+  onSubmit: MouseEventHandler<HTMLButtonElement>;
 }
 
 const BuyInsurance: FC<IBuyInsrance> = ({ onSubmit }) => {
   const { insuranceType } = useContext(CallToPriceContext);
   const { chooseInsurance, thirdPartyInsurance } = persianWords.inquiry;
-  const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.DISCOUNTS);
+  const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.INSURANCE_TYPE);
 
   const handleShowComponent = () => {
     switch (currentStep) {

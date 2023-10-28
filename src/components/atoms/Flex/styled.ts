@@ -7,7 +7,7 @@ export const StyledWrapper = styled.div<IFlex>(
     flexDirection: "column",
     gap: gap ?? "0",
     justifyContent: justifyContent ?? "flex-start",
-    alignItems: alignItems ?? "flex-start",
+    alignItems: alignItems ?? "center",
 
     "@media(min-width: 760px)": {
       flexDirection: "row",

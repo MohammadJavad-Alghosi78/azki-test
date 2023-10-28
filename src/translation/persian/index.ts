@@ -5,6 +5,7 @@ const persianWords: IWords = {
   shared: {
     previousStep: "مرحله قبل",
     nextStep: "مرحله بعد",
+    close: "بستن",
   },
   pageTitles: {
     insuranceComparisonAndPurchaseSystem: "سامانه مقایسه و خرید آنلاین بیمه",
@@ -21,6 +22,7 @@ const persianWords: IWords = {
     body: "بدنه",
   },
   inquiry: {
+    insuranceType: "نوع بیمه",
     chooseInsurance: "انتخاب بیمه",
     thirdPartyInsurance: "بیمه شخص ثالث",
     bodyInsurance: "بیمه بدنه",

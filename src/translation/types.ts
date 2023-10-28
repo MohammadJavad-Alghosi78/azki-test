@@ -2,6 +2,7 @@ export interface IWords {
   shared: {
     previousStep: string;
     nextStep: string;
+    close: string;
   };
   pageTitles: {
     insuranceComparisonAndPurchaseSystem: string;
@@ -18,6 +19,7 @@ export interface IWords {
     body: string;
   };
   inquiry: {
+    insuranceType: string;
     chooseInsurance: string;
     thirdPartyInsurance: string;
     bodyInsurance: string;
