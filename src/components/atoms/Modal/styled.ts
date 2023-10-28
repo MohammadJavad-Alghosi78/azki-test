@@ -20,7 +20,6 @@ export const StyledModal = styled.div(({ theme }) => ({
   position: "relative",
   backgroundColor: theme.colors.white,
   width: "500px",
-  height: "220px",
   border: `1px solid ${theme.colors.gray}`,
   borderRadius: "15px",
   overflow: "hidden",
@@ -29,6 +28,7 @@ export const StyledModal = styled.div(({ theme }) => ({
 
 export const StyledModalBody = styled.div`
   padding: 20px;
+  margin-bottom: 54px;
 `;
 
 export const StyledModalFooter = styled.div`

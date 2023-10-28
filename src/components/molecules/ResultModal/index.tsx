@@ -23,10 +23,10 @@ const ResultModal: FC<IResultModal> = (props) => {
           smalignitems="center"
           width="100%"
         >
-          <Typography variant="caption">
+          <Typography variant="body">
             {relatedStrings[item[0] as keyof typeof relatedStrings]}:
           </Typography>
-          <Typography variant="caption">
+          <Typography variant="body">
             {item[0] === "insuranceType"
               ? relatedStrings[item[1] as keyof typeof relatedStrings]
               : item[1]}

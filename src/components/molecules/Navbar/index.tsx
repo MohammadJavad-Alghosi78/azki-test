@@ -2,6 +2,7 @@
 import { FC, ReactNode } from "react";
 // components
 import { Flex, Typography } from "../../atoms";
+import { useWidth } from "../../../hooks";
 
 interface INavbar {
   pageTitle?: string;
@@ -10,6 +11,8 @@ interface INavbar {
 
 const Navbar: FC<INavbar> = (props) => {
   const { pageTitle, details } = props;
+  const { width } = useWidth();
+
   return (
     <Flex
       smflexdirection="row"
@@ -17,10 +20,10 @@ const Navbar: FC<INavbar> = (props) => {
       alignitems="center"
     >
       <img src="/icons/logo.svg" alt="" width={32} height={32} />
-      {window.innerWidth > 760 && (
+      {width > 760 && (
         <Typography variant="heading">{pageTitle ?? ""}</Typography>
       )}
-      <Typography variant="body">{details}</Typography>
+      <Typography variant="heading">{details}</Typography>
     </Flex>
   );
 };

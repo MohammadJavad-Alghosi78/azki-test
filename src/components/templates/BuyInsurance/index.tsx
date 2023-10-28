@@ -61,7 +61,7 @@ const BuyInsurance: FC<IBuyInsrance> = ({ onSubmit }) => {
       smflexdirection="column"
       smjustifycontent="center"
       smalignitems="flex-start"
-      smgap="24px"
+      smgap="50px"
     >
       <Typography variant="heading">
         {currentStep === ESteps.INSURANCE_TYPE

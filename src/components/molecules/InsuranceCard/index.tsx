@@ -20,8 +20,8 @@ const InsuranceCard: FC<IInsuranceCardPropsType> = (props) => {
       role="presentation"
       onClick={handleCardClick}
     >
-      <img src={imageSrc} alt={title} width={36} height={36} />
-      <Typography variant="caption">{title}</Typography>
+      <img src={imageSrc} alt={title} width={80} height={80} />
+      <Typography variant="body">{title}</Typography>
     </StyledWrapper>
   );
 };

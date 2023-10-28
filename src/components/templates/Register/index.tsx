@@ -1,6 +1,6 @@
 // node_modules
 import { FC } from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 // components
 import { Button, Flex, TextField, Typography } from "../../atoms";
 // types
@@ -14,7 +14,6 @@ import { StyledWrapper } from "./styled";
 
 const Register: FC<IRegisterPropsType> = (props) => {
   const {
-    control,
     register,
     formState: { errors },
     watch,
@@ -34,19 +33,13 @@ const Register: FC<IRegisterPropsType> = (props) => {
         {persianWords.RegistrationProcess.register}
       </Typography>
       <Flex justifycontent="space-between" smgap="36px">
-        <Controller
-          control={control}
-          name="firstName"
-          rules={firstNameValidation}
-          render={({ field, fieldState: { error } }) => (
-            <TextField
-              placeholder={persianWords.RegistrationProcess.firstName}
-              value={watch("firstName")}
-              onChange={(e) => setValue("firstName", e.target.value)}
-              className="register__name"
-              errormessage={errors.firstName?.message?.toString()}
-            />
-          )}
+        <TextField
+          {...register("lastName", firstNameValidation)}
+          placeholder={persianWords.RegistrationProcess.firstName}
+          value={watch("firstName")}
+          onChange={(e) => setValue("firstName", e.target.value)}
+          className="register__name"
+          errormessage={errors.firstName?.message?.toString()}
         />
         <TextField
           {...register("lastName", lastNameValidation)}

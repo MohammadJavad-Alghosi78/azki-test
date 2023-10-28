@@ -3,7 +3,7 @@ import { FC } from "react";
 // components
 import CompanyStep from ".";
 // hooks
-import useGetInsureCompanies from "../../../hooks/useGetInsureCompanies";
+import useGetInsureCompanies from "../../../hooks/requests/useGetInsureCompanies";
 
 const CompanyStepContainer: FC = () => {
   const { data: companies } = useGetInsureCompanies();

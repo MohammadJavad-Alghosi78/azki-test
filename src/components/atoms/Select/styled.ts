@@ -9,9 +9,9 @@ export const StyledWrapper = styled.div(() => ({
 
 export const StyledArrow = styled.img(() => ({
   position: "absolute",
-  width: "8px",
-  height: "8px",
-  top: "16px",
+  width: "16px",
+  height: "16px",
+  top: "24px",
   left: "8px",
   transform: "rotate(-90deg)",
   filter:
@@ -23,13 +23,13 @@ export const StyledArrow = styled.img(() => ({
 export const StyledSelect = styled.select(({ theme }) => ({
   cursor: "pointer",
   width: "100%",
-  height: "40px",
+  height: "60px",
   padding: "8px",
   borderRadius: "5px",
   border: `1px solid ${theme.colors.gray}`,
   color: theme.colors.black,
   backgroundColor: theme.colors.white,
-  fontSize: "12px",
+  fontSize: "18px",
   outline: "none",
   appearance: "none",
   "-webkit-appearance": "none",

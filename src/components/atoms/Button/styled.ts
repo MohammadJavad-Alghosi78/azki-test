@@ -28,7 +28,7 @@ export const StyledButton = styled.button<IButtonProps>(
     minWidth: "130px",
     cursor: disabled ? "not-allowed" : "pointer",
     padding: "0.5rem",
-    fontSize: "12px",
+    fontSize: "18px",
     ...handleVariantStyles(theme, variant, disabled),
   })
 );
