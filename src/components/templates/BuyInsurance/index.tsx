@@ -17,7 +17,7 @@ interface IBuyInsrance {
 const BuyInsurance: FC<IBuyInsrance> = ({ onSubmit }) => {
   const { insuranceType } = useContext(CallToPriceContext);
   const { chooseInsurance, thirdPartyInsurance } = persianWords.inquiry;
-  const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.COMPANY);
+  const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.DISCOUNTS);
 
   const handleShowComponent = () => {
     switch (currentStep) {

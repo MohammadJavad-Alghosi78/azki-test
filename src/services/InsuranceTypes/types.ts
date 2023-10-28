@@ -90,3 +90,10 @@ export interface ICompany {
 }
 
 export type GetInsureCompanies = () => Promise<AxiosResponse<Array<ICompany>>>;
+
+export interface IDiscounts {
+  id: number;
+  title: string;
+}
+
+export type GetThirdDiscounts = () => Promise<AxiosResponse<Array<IDiscounts>>>;
