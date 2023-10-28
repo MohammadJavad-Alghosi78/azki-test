@@ -1,6 +1,7 @@
+// node_modules
 import { FC, ReactNode } from "react";
-import { StyledNavbar } from "./styled";
-import { Typography } from "../../atoms";
+// components
+import { Flex, Typography } from "../../atoms";
 
 interface INavbar {
   pageTitle?: string;
@@ -10,11 +11,17 @@ interface INavbar {
 const Navbar: FC<INavbar> = (props) => {
   const { pageTitle, details } = props;
   return (
-    <StyledNavbar>
-      <img src="/icons/logo.svg" alt="" />
-      <Typography variant="heading">{pageTitle ?? ""}</Typography>
-      <Typography variant="caption">{details}</Typography>
-    </StyledNavbar>
+    <Flex
+      smflexdirection="row"
+      smjustifycontent="space-between"
+      alignitems="center"
+    >
+      <img src="/icons/logo.svg" alt="" width={32} height={32} />
+      {window.innerWidth > 760 && (
+        <Typography variant="heading">{pageTitle ?? ""}</Typography>
+      )}
+      <Typography variant="body">{details}</Typography>
+    </Flex>
   );
 };
 

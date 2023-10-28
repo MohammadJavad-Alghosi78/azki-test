@@ -1,3 +1,4 @@
+// node_modules
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`

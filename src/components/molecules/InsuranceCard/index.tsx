@@ -1,7 +1,11 @@
+// node_modules
 import { FC } from "react";
-import { StyledWrapper } from "./styled";
-import { IInsuranceCardPropsType } from "./types";
+// components
 import { Typography } from "../../atoms";
+// types
+import { IInsuranceCardPropsType } from "./types";
+// styles
+import { StyledWrapper } from "./styled";
 
 const InsuranceCard: FC<IInsuranceCardPropsType> = (props) => {
   const { title, imageSrc, disabled = false, onClick } = props;

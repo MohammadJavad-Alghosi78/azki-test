@@ -1,10 +1,12 @@
 // node_modules
 import { ThemeProvider } from "styled-components";
 import { Routes, Route } from "react-router-dom";
+// pages
+import { BuyInsurance, Register } from "./components/pages";
 // theme
 import theme from "./theme";
+// styles
 import GlobalStyle from "./styles";
-import { BuyInsurance, Register } from "./components/pages";
 
 function App() {
   return (

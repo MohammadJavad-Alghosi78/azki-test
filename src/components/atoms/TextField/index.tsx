@@ -1,28 +1,33 @@
 // node_modules
-import { FC } from "react";
+import { ForwardRefRenderFunction, forwardRef } from "react";
+// components
+import Typography from "../Typography";
 // types
 import { ITextFieldProps } from "./types";
+// theme
+import theme from "../../../theme";
 // styles
 import { StyledTextField, TextFieldWrapper } from "./styled";
-import Typography from "../Typography";
-import theme from "../../../theme";
 
-const TextField: FC<ITextFieldProps> = (props) => {
-  const { errorMessage, ...rest } = props;
+const TextField: ForwardRefRenderFunction<unknown, ITextFieldProps> = (
+  props,
+  ref
+) => {
+  const { errormessage, ...rest } = props;
   return (
     <TextFieldWrapper>
       <StyledTextField
         {...rest}
         autoComplete="false"
-        errorMessage={errorMessage}
+        errormessage={errormessage}
       />
-      {errorMessage && (
+      {errormessage && (
         <Typography variant="caption" color={theme.colors.red}>
-          {errorMessage}
+          {errormessage ?? ""}
         </Typography>
       )}
     </TextFieldWrapper>
   );
 };
 
-export default TextField;
+export default forwardRef(TextField);

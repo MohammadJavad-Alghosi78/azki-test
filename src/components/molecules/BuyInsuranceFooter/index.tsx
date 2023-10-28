@@ -1,9 +1,13 @@
-import { FC, useState } from "react";
-import { StyledWrapper } from "./styled";
+// node_modules
+import { FC } from "react";
+// components
 import { Button, Flex } from "../../atoms";
-import { persianWords } from "../../../translation";
+// constants
 import { ESteps } from "../../templates/BuyInsurance/constants";
+// types
 import { IBuyInsuranceFooterPropsType } from "./types";
+// translations
+import { persianWords } from "../../../translation";
 
 const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
   const { currentStep, onCurrentStepChange, onSubmit, isNextButtonDisabled } =
@@ -28,7 +32,7 @@ const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
 
   if (currentStep === ESteps.DISCOUNTS) {
     return (
-      <Flex justifyContent="end">
+      <Flex justifycontent="end" smwidth="100%" width="50%">
         <Button
           variant="contained"
           onClick={onSubmit}
@@ -40,7 +44,13 @@ const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
     );
   }
   return (
-    <StyledWrapper>
+    <Flex
+      smjustifycontent="space-between"
+      alignitems="center"
+      smflexdirection="row"
+      smwidth="100%"
+      width="50%"
+    >
       <Button variant="outlined" onClick={() => handleStep("prev")}>
         {previousStep}
       </Button>
@@ -51,7 +61,7 @@ const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
       >
         {nextStep}
       </Button>
-    </StyledWrapper>
+    </Flex>
   );
 };
 

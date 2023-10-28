@@ -1,4 +1,6 @@
+// config
 import { http } from "../../config";
+// types
 import {
   GetInsureCompanies,
   GetThirdDiscounts,

@@ -1,3 +1,4 @@
+// node_modules
 import { MouseEventHandler, ReactNode } from "react";
 
 export interface IModal {

@@ -1,5 +1,8 @@
+// node_modules
 import { FC, ReactNode } from "react";
+// components
 import { Body, Navbar } from "../../molecules";
+// styles
 import { StyledWrapper } from "./styled";
 
 interface ILayout {

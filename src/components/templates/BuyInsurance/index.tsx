@@ -1,14 +1,18 @@
+// node_modules
 import { FC, MouseEventHandler, useContext, useState } from "react";
-import { StyledWrapper } from "./styled";
-import { Typography } from "../../atoms";
-import { CallToPriceContext } from "../../../context";
-import { persianWords } from "../../../translation";
+// components
+import { Flex, Typography } from "../../atoms";
 import { BuyInsuranceFooter } from "../../molecules";
-import { ESteps } from "./constants";
 import { ChooseInsuranceStep } from "../../organisms";
 import CarStepContainer from "../../organisms/CarStep/CarStepContainer";
 import CompanyStepContainer from "../../organisms/CompanyStep/CompanyStepContainer";
 import DiscountStepContainer from "../../organisms/DiscountStep/DiscountStepContainer";
+// context
+import { CallToPriceContext } from "../../../context";
+// translations
+import { persianWords } from "../../../translation";
+// constants
+import { ESteps } from "./constants";
 
 interface IBuyInsrance {
   onSubmit: MouseEventHandler<HTMLButtonElement>;
@@ -51,10 +55,16 @@ const BuyInsurance: FC<IBuyInsrance> = ({ onSubmit }) => {
         return <DiscountStepContainer />;
     }
   };
+
   return (
-    <StyledWrapper>
+    <Flex
+      smflexdirection="column"
+      smjustifycontent="center"
+      smalignitems="flex-start"
+      smgap="24px"
+    >
       <Typography variant="heading">
-        {insuranceType === "thirdPartyInsurance"
+        {currentStep === ESteps.INSURANCE_TYPE
           ? chooseInsurance
           : thirdPartyInsurance}
       </Typography>
@@ -65,7 +75,7 @@ const BuyInsurance: FC<IBuyInsrance> = ({ onSubmit }) => {
         onSubmit={onSubmit}
         isNextButtonDisabled={isNextButtonDisabled[currentStep]}
       />
-    </StyledWrapper>
+    </Flex>
   );
 };
 

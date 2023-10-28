@@ -1,57 +1,78 @@
+// node_modules
 import { FC } from "react";
-import { IRegisterPropsType } from "./types";
-import { useFormContext } from "react-hook-form";
-import { StyledWrapper } from "./styled";
+import { Controller, useFormContext } from "react-hook-form";
+// components
 import { Button, Flex, TextField, Typography } from "../../atoms";
-import { persianWords } from "../../../translation";
+// types
+import { IRegisterPropsType } from "./types";
+// constants
 import { validationRules } from "./constants";
+// translations
+import { persianWords } from "../../../translation";
+// styles
+import { StyledWrapper } from "./styled";
 
 const Register: FC<IRegisterPropsType> = (props) => {
   const {
+    control,
     register,
     formState: { errors },
     watch,
     setValue,
   } = useFormContext();
+
+  const {
+    firstName: firstNameValidation,
+    lastName: lastNameValidation,
+    phoneNumber: phoneNumberValidation,
+    password: passwordValidation,
+  } = validationRules;
+
   return (
     <StyledWrapper>
       <Typography variant="heading" className="register__title">
         {persianWords.RegistrationProcess.register}
       </Typography>
-      <Flex justifyContent="space-between" gap="12px">
-        <TextField
-          {...register("firstName", validationRules.firstName)}
-          placeholder={persianWords.RegistrationProcess.firstName}
-          value={watch("firstName")}
-          onChange={(e) => setValue("firstName", e.target.value)}
-          className="register__name"
-          errorMessage={errors.firstName?.message?.toString()}
+      <Flex justifycontent="space-between" smgap="36px">
+        <Controller
+          control={control}
+          name="firstName"
+          rules={firstNameValidation}
+          render={({ field, fieldState: { error } }) => (
+            <TextField
+              placeholder={persianWords.RegistrationProcess.firstName}
+              value={watch("firstName")}
+              onChange={(e) => setValue("firstName", e.target.value)}
+              className="register__name"
+              errormessage={errors.firstName?.message?.toString()}
+            />
+          )}
         />
         <TextField
-          {...register("lastName", validationRules.lastName)}
+          {...register("lastName", lastNameValidation)}
           placeholder={persianWords.RegistrationProcess.lastName}
           value={watch("lastName")}
           onChange={(e) => setValue("lastName", e.target.value)}
           className="register__name"
-          errorMessage={errors.lastName?.message?.toString()}
+          errormessage={errors.lastName?.message?.toString()}
         />
       </Flex>
       <TextField
-        {...register("phoneNumber", validationRules.phoneNumber)}
+        {...register("phoneNumber", phoneNumberValidation)}
         placeholder={persianWords.RegistrationProcess.phoneNumber}
         value={watch("phoneNumber")}
         onChange={(e) => setValue("phoneNumber", e.target.value)}
-        errorMessage={errors.phoneNumber?.message?.toString()}
+        errormessage={errors.phoneNumber?.message?.toString()}
       />
       <TextField
-        {...register("password", validationRules.password)}
+        {...register("password", passwordValidation)}
         placeholder={persianWords.RegistrationProcess.password}
         value={watch("password")}
         onChange={(e) => setValue("password", e.target.value)}
         type="password"
-        errorMessage={errors.password?.message?.toString()}
+        errormessage={errors.password?.message?.toString()}
       />
-      <Flex justifyContent="flex-end" className="register__footer">
+      <Flex justifycontent="flex-end" className="register__footer">
         <Button variant="contained" onClick={props.onSubmit}>
           {persianWords.RegistrationProcess.register}
         </Button>

@@ -1,8 +1,11 @@
+// node_modules
 import { FC } from "react";
+// components
 import CarStep from ".";
+// hooks
 import { useGetVehicleTypes } from "../../../hooks";
 
-const CarStepContainer: FC<any> = (props) => {
+const CarStepContainer: FC = () => {
   const { data: vehicleTypes } = useGetVehicleTypes();
 
   return <CarStep vehicles={vehicleTypes} />;

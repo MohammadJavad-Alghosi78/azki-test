@@ -1,9 +1,13 @@
+// node_modules
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import "./styles/fonts.css";
 import { BrowserRouter } from "react-router-dom";
+// components
+import App from "./App";
+// etc
+import reportWebVitals from "./reportWebVitals";
+// styles
+import "./styles/fonts.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

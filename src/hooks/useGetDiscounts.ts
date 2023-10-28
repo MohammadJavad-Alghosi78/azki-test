@@ -1,5 +1,8 @@
+// node_modules
 import { useEffect, useState } from "react";
+// services
 import { InsuranceTypesServices } from "../services";
+// types
 import { IDiscounts } from "../services/InsuranceTypes/types";
 
 const useGetDiscounts = () => {
@@ -9,7 +12,6 @@ const useGetDiscounts = () => {
     (async () => {
       const { data } = await InsuranceTypesServices.getThirdDiscounts();
       setData(data);
-      console.log(data);
     })();
   }, []);
 

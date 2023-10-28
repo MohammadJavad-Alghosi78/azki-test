@@ -1,9 +1,15 @@
+// node_modules
 import { ChangeEvent, FC, useContext } from "react";
+// components
 import { Flex, Select, Typography } from "../../atoms";
-import theme from "../../../theme";
-import { persianWords } from "../../../translation";
-import { ICompany } from "../../../services/InsuranceTypes/types";
+// context
 import { CallToPriceContext } from "../../../context";
+// theme
+import theme from "../../../theme";
+// types
+import { ICompany } from "../../../services/InsuranceTypes/types";
+// translations
+import { persianWords } from "../../../translation";
 
 interface ICompanyStep {
   companies: Array<ICompany>;
@@ -30,7 +36,12 @@ const CompanyStep: FC<ICompanyStep> = (props) => {
       <Typography variant="body" color={theme.colors.lightGray}>
         {choosePreviousInsuranceCompany}
       </Typography>
-      <Flex justifyContent="space-between" gap="12px">
+      <Flex
+        justifycontent="space-between"
+        gap="12px"
+        smwidth="100%"
+        width="50%"
+      >
         <Select
           options={companiesOptions}
           label={previousInsuranceCompany}

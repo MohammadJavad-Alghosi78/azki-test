@@ -7,12 +7,12 @@ const handleVariantStyles = (variant: TypographyVariants) => {
   switch (variant) {
     case "heading":
       return {
-        fontSize: "18px",
+        fontSize: "24px",
         fontWeight: "bold",
       };
     case "body":
       return {
-        fontSize: "14px",
+        fontSize: "16px",
         fontWeight: "500",
       };
     case "caption":

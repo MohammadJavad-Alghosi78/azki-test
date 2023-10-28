@@ -1,5 +1,8 @@
+// node_modules
 import { FC, ReactNode, useState } from "react";
+// context
 import { CallToPriceContext } from "../../context";
+// types
 import { InsuranceType } from "../../context/types";
 
 interface ICallToPriceProvider {

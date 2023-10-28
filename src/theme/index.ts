@@ -1,12 +1,10 @@
-// elements
-import colors from "./colors";
-import breakPoints from "./breakPoints";
-// types
+// node_modules
 import { DefaultTheme } from "styled-components";
+// palette
+import colors from "./colors";
 
 const theme: DefaultTheme = {
   colors,
-  breakPoints,
 };
 
 export default theme;

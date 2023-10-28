@@ -1,9 +1,15 @@
+// node_modules
 import { ChangeEvent, FC, useContext } from "react";
-import { persianWords } from "../../../translation";
+// components
 import { Flex, Select, Typography } from "../../atoms";
-import theme from "../../../theme";
-import { IDiscounts } from "../../../services/InsuranceTypes/types";
+// context
 import { CallToPriceContext } from "../../../context";
+// theme
+import theme from "../../../theme";
+// types
+import { IDiscounts } from "../../../services/InsuranceTypes/types";
+// translations
+import { persianWords } from "../../../translation";
 
 interface IDiscountStep {
   discounts: Array<IDiscounts>;
@@ -42,7 +48,12 @@ const DiscountStep: FC<IDiscountStep> = ({ discounts }) => {
       <Typography variant="body" color={theme.colors.lightGray}>
         {chooseDiscountPercentageThirdInsuranceAndDriverAccidents}
       </Typography>
-      <Flex justifyContent="space-between" gap="12px">
+      <Flex
+        justifycontent="space-between"
+        smgap="12px"
+        smwidth="100%"
+        width="50%"
+      >
         <Select
           options={discountOptions}
           label={discountPercentageThirdInsurance}

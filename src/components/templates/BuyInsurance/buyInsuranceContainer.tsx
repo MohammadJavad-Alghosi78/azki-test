@@ -1,9 +1,13 @@
+// node_modules
 import { FC, useContext, useState } from "react";
+// components
 import BuyInsurance from ".";
 import { Modal } from "../../atoms";
-import { persianWords } from "../../../translation";
-import { CallToPriceContext } from "../../../context";
 import { ResultModal } from "../../molecules";
+// context
+import { CallToPriceContext } from "../../../context";
+// translations
+import { persianWords } from "../../../translation";
 
 const BuyInsuranceContainer: FC = () => {
   const data = useContext(CallToPriceContext);

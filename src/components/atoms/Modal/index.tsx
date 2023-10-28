@@ -1,21 +1,26 @@
+// node_modules
 import { FC } from "react";
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
+// components
+import Button from "../Button";
+// types
 import { IModal } from "./types";
+// styles
 import {
   StyledModal,
   StyledModalBody,
   StyledModalFooter,
   StyledModalWrapper,
 } from "./styled";
-import Button from "../Button";
 
 const Modal: FC<IModal> = (props) => {
   const { show, onCloseButtonClick, body, closeButtonText } = props;
+
   if (!show) {
     return null;
   }
 
-  return ReactDOM.createPortal(
+  return createPortal(
     <StyledModalWrapper>
       <StyledModal>
         <StyledModalBody>{body}</StyledModalBody>

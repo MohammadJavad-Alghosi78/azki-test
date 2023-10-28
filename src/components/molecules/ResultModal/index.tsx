@@ -1,6 +1,8 @@
+// node_modules
 import { FC } from "react";
-import { StyledItemWrapper, StyledWrapper } from "./styled";
-import { Typography } from "../../atoms";
+// components
+import { Flex, Typography } from "../../atoms";
+// translations
 import { persianWords } from "../../../translation";
 
 interface IResultModal {
@@ -10,10 +12,17 @@ interface IResultModal {
 const ResultModal: FC<IResultModal> = (props) => {
   const { data } = props;
   const relatedStrings = persianWords.inquiry;
+
   return (
-    <StyledWrapper>
+    <Flex smflexdirection="column" smgap="12px">
       {data.map((item: Array<string>) => (
-        <StyledItemWrapper>
+        <Flex
+          key={`${item[0]}_${item[1]}`}
+          smflexdirection="row"
+          smjustifycontent="space-between"
+          smalignitems="center"
+          width="100%"
+        >
           <Typography variant="caption">
             {relatedStrings[item[0] as keyof typeof relatedStrings]}:
           </Typography>
@@ -22,9 +31,9 @@ const ResultModal: FC<IResultModal> = (props) => {
               ? relatedStrings[item[1] as keyof typeof relatedStrings]
               : item[1]}
           </Typography>
-        </StyledItemWrapper>
+        </Flex>
       ))}
-    </StyledWrapper>
+    </Flex>
   );
 };
 

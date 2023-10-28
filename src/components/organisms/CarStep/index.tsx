@@ -1,10 +1,16 @@
+// node_modules
 import { ChangeEvent, FC, useContext, useState } from "react";
-import theme from "../../../theme";
+// components
 import { Flex, Select, Typography } from "../../atoms";
-import { persianWords } from "../../../translation";
-import { IVehicleResponse } from "../../../services/InsuranceTypes/types";
+// context
 import { CallToPriceContext } from "../../../context";
+// theme
+import theme from "../../../theme";
+// types
+import { IVehicleResponse } from "../../../services/InsuranceTypes/types";
 import { ISelectOption } from "../../atoms/Select/types";
+// translations
+import { persianWords } from "../../../translation";
 
 interface ICarStep {
   vehicles: Array<IVehicleResponse> | null;
@@ -45,7 +51,12 @@ const CarStep: FC<ICarStep> = ({ vehicles }) => {
       <Typography variant="body" color={theme.colors.lightGray}>
         {chooseCarModelAndType}
       </Typography>
-      <Flex justifyContent="space-between" gap="12px">
+      <Flex
+        justifycontent="space-between"
+        smgap="12px"
+        smwidth="100%"
+        width="50%"
+      >
         <Select
           options={carModelOptions ?? []}
           label={carModel}

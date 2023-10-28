@@ -5,4 +5,4 @@ export interface IInsuranceCardPropsType {
   onClick?: () => void;
 }
 
-export type CardWrapper = Pick<IInsuranceCardPropsType, "disabled">;
+export type CardWrapperType = Pick<IInsuranceCardPropsType, "disabled">;

@@ -1,17 +1,19 @@
+// node_modules
 import { FC } from "react";
-import { Typography } from "../../atoms";
+// components
+import { Flex, Typography } from "../../atoms";
+// types
 import { IPersonDetails } from "./types";
-import { StyledWrapper } from "./styled";
 
 const PersonDetails: FC<IPersonDetails> = (props) => {
   const { firstName, lastName } = props;
   return (
-    <StyledWrapper>
+    <Flex smflexdirection="row" smalignitems="center" smgap="4px">
       <img src="/icons/user.svg" alt="user" width={12} height={12} />
       <Typography variant="caption">
         {firstName} {lastName}
       </Typography>
-    </StyledWrapper>
+    </Flex>
   );
 };
 

@@ -6,7 +6,7 @@ import { ButtonVariants, IButtonProps } from "./types";
 const handleVariantStyles = (
   theme: DefaultTheme,
   variant: ButtonVariants,
-  disabled: boolean | undefined
+  disabled?: boolean
 ) => {
   if (variant === "contained") {
     return {
