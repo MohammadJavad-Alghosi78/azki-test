@@ -7,6 +7,7 @@ export interface ISelectOption {
 }
 
 export interface ISelectProps extends HTMLAttributes<HTMLSelectElement> {
+  value: string;
   options: Array<ISelectOption>;
   disabled?: boolean;
   hasError?: boolean;

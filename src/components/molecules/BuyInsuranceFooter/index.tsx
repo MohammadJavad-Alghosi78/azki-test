@@ -1,9 +1,11 @@
 // node_modules
-import { FC } from "react";
+import { FC, useContext } from "react";
 // components
 import { Button, Flex } from "../../atoms";
 // constants
 import { ESteps } from "../../templates/BuyInsurance/constants";
+// context
+import { CallToPriceContext } from "../../../context";
 // types
 import { IBuyInsuranceFooterPropsType } from "./types";
 // translations
@@ -14,6 +16,7 @@ import { BackIcon, ForwardIcon } from "./styled";
 const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
   const { currentStep, onCurrentStepChange, onSubmit, isNextButtonDisabled } =
     props;
+  const { onCarModelChange, onCarTypeChange } = useContext(CallToPriceContext);
 
   const {
     shared: { previousStep, nextStep },
@@ -23,7 +26,11 @@ const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
   const handleStep = (id: "prev" | "next") => {
     if (id === "prev") {
       if (currentStep === ESteps.COMPANY) onCurrentStepChange(ESteps.CAR);
-      else onCurrentStepChange(ESteps.INSURANCE_TYPE);
+      else {
+        onCurrentStepChange(ESteps.INSURANCE_TYPE);
+        onCarModelChange("");
+        onCarTypeChange("");
+      }
     } else {
       if (currentStep === ESteps.CAR) onCurrentStepChange(ESteps.COMPANY);
       else onCurrentStepChange(ESteps.DISCOUNTS);

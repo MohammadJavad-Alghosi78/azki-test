@@ -25,7 +25,9 @@ export const StyledTextField = styled.input<ITextFieldProps>(
       !!errormessage ? theme.colors.red : theme.colors.gray
     }`,
     "&:focus, &:hover": {
-      border: `1px solid ${theme.colors.black}`,
+      border: `1px solid ${
+        !!errormessage ? theme.colors.red : theme.colors.black
+      }`,
     },
     "&::placeholder": {
       color: theme.colors.gray,

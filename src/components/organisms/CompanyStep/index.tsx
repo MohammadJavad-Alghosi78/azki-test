@@ -16,7 +16,10 @@ interface ICompanyStep {
 }
 
 const CompanyStep: FC<ICompanyStep> = (props) => {
-  const { onPreviousInsuranceCompany } = useContext(CallToPriceContext);
+  const {
+    onPreviousInsuranceCompany,
+    previousInsuranceCompany: selectedPreviousInsuranceCompany,
+  } = useContext(CallToPriceContext);
   const { choosePreviousInsuranceCompany, previousInsuranceCompany } =
     persianWords.inquiry;
 
@@ -46,6 +49,7 @@ const CompanyStep: FC<ICompanyStep> = (props) => {
           options={companiesOptions}
           label={previousInsuranceCompany}
           onChange={handleCompanyChange}
+          value={selectedPreviousInsuranceCompany}
         />
       </Flex>
     </>

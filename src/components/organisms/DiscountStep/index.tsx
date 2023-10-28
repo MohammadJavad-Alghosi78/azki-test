@@ -19,6 +19,9 @@ const DiscountStep: FC<IDiscountStep> = ({ discounts }) => {
   const {
     onDiscountPercentageThirdInsurance,
     onDiscountPercentageDriverAccidents,
+    discountPercentageDriverAccidents:
+      selectedDiscountPercentageDriverAccidents,
+    discountPercentageThirdInsurance: selectedDiscountPercentageThirdInsurance,
   } = useContext(CallToPriceContext);
   const {
     chooseDiscountPercentageThirdInsuranceAndDriverAccidents,
@@ -58,11 +61,13 @@ const DiscountStep: FC<IDiscountStep> = ({ discounts }) => {
           options={discountOptions}
           label={discountPercentageThirdInsurance}
           onChange={handleChangethirdInsuranceDiscount}
+          value={selectedDiscountPercentageThirdInsurance}
         />
         <Select
           options={discountOptions}
           label={discountPercentageDriverAccidents}
           onChange={handleChangeDriverAccidentDiscount}
+          value={selectedDiscountPercentageDriverAccidents}
         />
       </Flex>
     </>

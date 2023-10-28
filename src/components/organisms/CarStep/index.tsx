@@ -15,7 +15,8 @@ const CarStep: FC<ICarStep> = (props) => {
   const { carModelOptions, onCarModelChange, carTypes, onCarTypeChange } =
     props;
   const { chooseCarModelAndType, carModel, carType } = persianWords.inquiry;
-  const { carModel: SelectedCarModel } = useContext(CallToPriceContext);
+  const { carModel: SelectedCarModel, carType: selectedCarType } =
+    useContext(CallToPriceContext);
 
   return (
     <>
@@ -32,12 +33,14 @@ const CarStep: FC<ICarStep> = (props) => {
           options={carModelOptions}
           label={carModel}
           onChange={onCarModelChange}
+          value={SelectedCarModel}
         />
         <Select
           options={carTypes ?? []}
           disabled={!SelectedCarModel}
           label={carType}
           onChange={onCarTypeChange}
+          value={selectedCarType}
         />
       </Flex>
     </>

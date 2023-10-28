@@ -34,10 +34,12 @@ const Register: FC<IRegisterPropsType> = (props) => {
       </Typography>
       <Flex justifycontent="space-between" smgap="36px">
         <TextField
-          {...register("lastName", firstNameValidation)}
+          {...register("firstName", firstNameValidation)}
           placeholder={persianWords.RegistrationProcess.firstName}
           value={watch("firstName")}
-          onChange={(e) => setValue("firstName", e.target.value)}
+          onChange={(e) =>
+            setValue("firstName", e.target.value, { shouldValidate: true })
+          }
           className="register__name"
           errormessage={errors.firstName?.message?.toString()}
         />
@@ -45,7 +47,9 @@ const Register: FC<IRegisterPropsType> = (props) => {
           {...register("lastName", lastNameValidation)}
           placeholder={persianWords.RegistrationProcess.lastName}
           value={watch("lastName")}
-          onChange={(e) => setValue("lastName", e.target.value)}
+          onChange={(e) =>
+            setValue("lastName", e.target.value, { shouldValidate: true })
+          }
           className="register__name"
           errormessage={errors.lastName?.message?.toString()}
         />
@@ -54,14 +58,19 @@ const Register: FC<IRegisterPropsType> = (props) => {
         {...register("phoneNumber", phoneNumberValidation)}
         placeholder={persianWords.RegistrationProcess.phoneNumber}
         value={watch("phoneNumber")}
-        onChange={(e) => setValue("phoneNumber", e.target.value)}
+        onChange={(e) =>
+          setValue("phoneNumber", e.target.value, { shouldValidate: true })
+        }
+        type="number"
         errormessage={errors.phoneNumber?.message?.toString()}
       />
       <TextField
         {...register("password", passwordValidation)}
         placeholder={persianWords.RegistrationProcess.password}
         value={watch("password")}
-        onChange={(e) => setValue("password", e.target.value)}
+        onChange={(e) =>
+          setValue("password", e.target.value, { shouldValidate: true })
+        }
         type="password"
         errormessage={errors.password?.message?.toString()}
       />

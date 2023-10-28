@@ -35,7 +35,7 @@ export const validationRules = {
       message: persianWords.validation.required,
     },
     pattern: {
-      value: /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/,
+      value: /^(?:0|98|\+98|\+980|0098|098|00980)?(9\d{9})$/,
       message: persianWords.validation.phoneNumberPattern,
     },
   },

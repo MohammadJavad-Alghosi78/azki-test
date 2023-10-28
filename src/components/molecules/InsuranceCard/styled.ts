@@ -16,7 +16,8 @@ export const StyledWrapper = styled.div<CardWrapperType>(
     height: "200px",
     cursor: disabled ? "not-allowed" : "pointer",
     transition: "background-color 0.5s",
-    filter: disabled ? "blur(1px)" : "blur(0)",
+    filter: disabled ? "opacity(30%)" : "blur(0)",
+    backgroundColor: disabled ? theme.colors.gray : theme.colors.white,
 
     "&:hover": {
       backgroundColor: !disabled && theme.colors.gray,
