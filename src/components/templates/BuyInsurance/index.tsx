@@ -10,14 +10,14 @@ import CarStepContainer from "../../organisms/CarStep/CarStepContainer";
 import CompanyStepContainer from "../../organisms/CompanyStep/CompanyStepContainer";
 import DiscountStepContainer from "../../organisms/DiscountStep/DiscountStepContainer";
 
-const BuyInsurance: FC = (props) => {
+interface IBuyInsrance {
+  onSubmit: Function;
+}
+
+const BuyInsurance: FC<IBuyInsrance> = ({ onSubmit }) => {
   const { insuranceType } = useContext(CallToPriceContext);
   const { chooseInsurance, thirdPartyInsurance } = persianWords.inquiry;
-  const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.INSURANCE_TYPE);
-
-  const handleSubmit = () => {
-    console.log("Submitted !!!");
-  };
+  const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.COMPANY);
 
   const handleShowComponent = () => {
     switch (currentStep) {
@@ -46,7 +46,7 @@ const BuyInsurance: FC = (props) => {
       <BuyInsuranceFooter
         currentStep={currentStep}
         onCurrentStepChange={(s) => setCurrentStep(s)}
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
       />
     </StyledWrapper>
   );

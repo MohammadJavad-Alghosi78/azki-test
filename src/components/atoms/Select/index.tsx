@@ -15,7 +15,7 @@ const Select: FC<ISelectProps> = (props) => {
     <StyledWrapper>
       <StyledArrow src="/icons/arrow.svg" alt="arrow" />
       <StyledSelect disabled={disabled} onChange={handleChange}>
-        <option value="" selected hidden disabled>
+        <option style={{ background: "red" }} value="" selected hidden disabled>
           {label}
         </option>
         {options?.map((option) => (

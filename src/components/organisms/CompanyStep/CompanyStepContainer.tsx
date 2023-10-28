@@ -1,8 +1,10 @@
 import { FC } from "react";
 import CompanyStep from ".";
+import useGetInsureCompanies from "../../../hooks/useGetInsureCompanies";
 
 const CompanyStepContainer: FC<any> = (props) => {
-  return <CompanyStep />;
+  const { data: companies } = useGetInsureCompanies();
+  return <CompanyStep companies={companies} />;
 };
 
 export default CompanyStepContainer;

@@ -11,7 +11,7 @@ export const StyledArrow = styled.img(() => ({
   position: "absolute",
   width: "8px",
   height: "8px",
-  top: "12px",
+  top: "16px",
   left: "8px",
   transform: "rotate(-90deg)",
   filter:
@@ -23,7 +23,7 @@ export const StyledArrow = styled.img(() => ({
 export const StyledSelect = styled.select(({ theme }) => ({
   cursor: "pointer",
   width: "100%",
-  height: "32px",
+  height: "40px",
   padding: "8px",
   borderRadius: "5px",
   border: `1px solid ${theme.colors.gray}`,

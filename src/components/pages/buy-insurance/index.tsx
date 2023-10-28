@@ -3,9 +3,6 @@ import { persianWords } from "../../../translation";
 import { PersonDetails } from "../../molecules";
 import { Layout } from "../../organisms";
 import { BuyInsurance } from "../../templates";
-import { http } from "../../../config";
-import { InsuranceTypesServices } from "../../../services";
-import { useEffect } from "react";
 
 const BuyInsurancePage = () => {
   const { firstName, lastName } = JSON.parse(

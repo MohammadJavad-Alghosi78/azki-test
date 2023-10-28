@@ -1,7 +1,9 @@
+import { FC } from "react";
 import BuyInsurance from ".";
 
-const buyInsuranceContainer = () => {
-  return <BuyInsurance />;
+const BuyInsuranceContainer: FC = () => {
+  const handleSubmit = () => {};
+  return <BuyInsurance onSubmit={handleSubmit} />;
 };
 
-export default buyInsuranceContainer;
+export default BuyInsuranceContainer;
