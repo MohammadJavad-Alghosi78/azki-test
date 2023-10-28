@@ -16,6 +16,10 @@ const persianWords: IWords = {
     phoneNumber: "شماره‌ موبایل",
     password: "رمز عبور",
   },
+  insuranceTypes: {
+    thirdParty: "شخص ثالث",
+    body: "بدنه",
+  },
   inquiry: {
     chooseInsurance: "انتخاب بیمه",
     thirdPartyInsurance: "بیمه شخص ثالث",

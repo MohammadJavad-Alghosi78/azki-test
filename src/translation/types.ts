@@ -13,6 +13,10 @@ export interface IWords {
     phoneNumber: string;
     password: string;
   };
+  insuranceTypes: {
+    thirdParty: string;
+    body: string;
+  };
   inquiry: {
     chooseInsurance: string;
     thirdPartyInsurance: string;

@@ -15,7 +15,7 @@ import {
 const BuyInsurance: FC = (props) => {
   const { insuranceType } = useContext(CallToPriceContext);
   const { chooseInsurance, thirdPartyInsurance } = persianWords.inquiry;
-  const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.CAR);
+  const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.INSURANCE_TYPE);
 
   const handleSubmit = () => {
     console.log("Submitted !!!");
@@ -24,7 +24,11 @@ const BuyInsurance: FC = (props) => {
   const handleShowComponent = () => {
     switch (currentStep) {
       case ESteps.INSURANCE_TYPE:
-        return <ChooseInsuranceStep />;
+        return (
+          <ChooseInsuranceStep
+            onChangeStep={() => setCurrentStep(ESteps.CAR)}
+          />
+        );
       case ESteps.CAR:
         return <CarStep />;
       case ESteps.COMPANY:

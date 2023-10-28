@@ -1,14 +1,9 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { FC } from "react";
 import { StyledWrapper } from "./styled";
 import { Button, Flex } from "../../atoms";
 import { persianWords } from "../../../translation";
 import { ESteps } from "../../templates/BuyInsurance/constants";
-
-interface IBuyInsuranceFooterPropsType {
-  currentStep: ESteps;
-  onCurrentStepChange: Dispatch<SetStateAction<ESteps>>;
-  onSubmit: Function;
-}
+import { IBuyInsuranceFooterPropsType } from "./types";
 
 const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
   const { currentStep, onCurrentStepChange } = props;
@@ -27,6 +22,8 @@ const BuyInsuranceFooter: FC<IBuyInsuranceFooterPropsType> = (props) => {
       else onCurrentStepChange(ESteps.DISCOUNTS);
     }
   };
+
+  if (currentStep === ESteps.INSURANCE_TYPE) return null;
 
   if (currentStep === ESteps.DISCOUNTS) {
     return (
