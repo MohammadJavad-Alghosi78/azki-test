@@ -15,9 +15,25 @@ interface IBuyInsrance {
 }
 
 const BuyInsurance: FC<IBuyInsrance> = ({ onSubmit }) => {
-  const { insuranceType } = useContext(CallToPriceContext);
+  const {
+    insuranceType,
+    carModel,
+    carType,
+    previousInsuranceCompany,
+    discountPercentageDriverAccidents,
+    discountPercentageThirdInsurance,
+  } = useContext(CallToPriceContext);
+
   const { chooseInsurance, thirdPartyInsurance } = persianWords.inquiry;
   const [currentStep, setCurrentStep] = useState<ESteps>(ESteps.INSURANCE_TYPE);
+
+  const isNextButtonDisabled = {
+    [ESteps.INSURANCE_TYPE]: !insuranceType,
+    [ESteps.CAR]: !carModel || !carType,
+    [ESteps.COMPANY]: !previousInsuranceCompany,
+    [ESteps.DISCOUNTS]:
+      !discountPercentageDriverAccidents || !discountPercentageThirdInsurance,
+  };
 
   const handleShowComponent = () => {
     switch (currentStep) {
@@ -47,6 +63,7 @@ const BuyInsurance: FC<IBuyInsrance> = ({ onSubmit }) => {
         currentStep={currentStep}
         onCurrentStepChange={(s) => setCurrentStep(s)}
         onSubmit={onSubmit}
+        isNextButtonDisabled={isNextButtonDisabled[currentStep]}
       />
     </StyledWrapper>
   );

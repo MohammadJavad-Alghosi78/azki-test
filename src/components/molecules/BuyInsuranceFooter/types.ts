@@ -6,4 +6,5 @@ export interface IBuyInsuranceFooterPropsType {
   currentStep: ESteps;
   onCurrentStepChange: Dispatch<SetStateAction<ESteps>>;
   onSubmit: MouseEventHandler<HTMLButtonElement>;
+  isNextButtonDisabled?: any;
 }
