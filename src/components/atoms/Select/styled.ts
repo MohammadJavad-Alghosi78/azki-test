@@ -35,4 +35,7 @@ export const StyledSelect = styled.select(({ theme }) => ({
   "-webkit-appearance": "none",
   "-moz-appearance": "none",
   "-ms-appearance": "none",
+  "&:disabled": {
+    cursor: "not-allowed",
+  },
 }));

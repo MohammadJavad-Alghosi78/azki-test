@@ -5,7 +5,7 @@ import { ISelectProps } from "./types";
 import { StyledSelect, StyledWrapper, StyledArrow } from "./styled";
 
 const Select: FC<ISelectProps> = (props) => {
-  const { options, label, onChange } = props;
+  const { options, label, onChange, disabled } = props;
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     if (onChange instanceof Function) onChange(e);
@@ -14,7 +14,7 @@ const Select: FC<ISelectProps> = (props) => {
   return (
     <StyledWrapper>
       <StyledArrow src="/icons/arrow.svg" alt="arrow" />
-      <StyledSelect onChange={handleChange}>
+      <StyledSelect disabled={disabled} onChange={handleChange}>
         <option value="" selected hidden disabled>
           {label}
         </option>

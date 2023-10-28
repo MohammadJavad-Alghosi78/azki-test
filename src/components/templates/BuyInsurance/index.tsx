@@ -5,12 +5,10 @@ import { CallToPriceContext } from "../../../context";
 import { persianWords } from "../../../translation";
 import { BuyInsuranceFooter } from "../../molecules";
 import { ESteps } from "./constants";
-import {
-  CarStep,
-  CompanyStep,
-  DiscountStep,
-  ChooseInsuranceStep,
-} from "../../organisms";
+import { ChooseInsuranceStep } from "../../organisms";
+import CarStepContainer from "../../organisms/CarStep/CarStepContainer";
+import CompanyStepContainer from "../../organisms/CompanyStep/CompanyStepContainer";
+import DiscountStepContainer from "../../organisms/DiscountStep/DiscountStepContainer";
 
 const BuyInsurance: FC = (props) => {
   const { insuranceType } = useContext(CallToPriceContext);
@@ -30,11 +28,11 @@ const BuyInsurance: FC = (props) => {
           />
         );
       case ESteps.CAR:
-        return <CarStep />;
+        return <CarStepContainer />;
       case ESteps.COMPANY:
-        return <CompanyStep />;
+        return <CompanyStepContainer />;
       case ESteps.DISCOUNTS:
-        return <DiscountStep />;
+        return <DiscountStepContainer />;
     }
   };
   return (
